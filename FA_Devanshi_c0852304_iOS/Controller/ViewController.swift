@@ -1,17 +1,11 @@
-//
-//  ViewController.swift
-//  FA_Namrata_C0853345_iOS
-//
-//  Created by Namrata Barot on 2022-05-30.
-//
 
 import UIKit
 
 class ViewController: UIViewController
 {
-    let coreDataController: CoreDataController = CoreDataController()
-    let currentBoardState: BoardModel = BoardModel(boardStates: [0, 0, 0, 0, 0, 0, 0, 0, 0])
-    var currentPlayerScore: PlayerModel = PlayerModel(player1Score: 0, player2Score: 0)
+    let coreDataController: PersistantDataController = PersistantDataController()
+    let currentBoardState: GameSquares = GameSquares(boardStates: [0, 0, 0, 0, 0, 0, 0, 0, 0])
+    var currentPlayerScore: TikTokPlayer = TikTokPlayer(player1Score: 0, player2Score: 0)
     enum Turn {
         case Nought
         case Cross
@@ -116,7 +110,7 @@ class ViewController: UIViewController
 
     // Enable detection of shake motion
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if motion == .motionShake {
+        if motion == .motionShake && lastBox != nil{
             lastBox.setTitle(nil, for: .normal)
             if(currentTurn == Turn.Cross){
                 currentTurn = Turn.Nought
@@ -159,7 +153,7 @@ class ViewController: UIViewController
         {
             resultAlert(title: "Draw")
         }
-        coreDataController.storePlayerStates(playerScores: PlayerModel(player1Score: crossesScore, player2Score: noughtsScore))
+        coreDataController.storePlayerStates(playerScores: TikTokPlayer(player1Score: crossesScore, player2Score: noughtsScore))
     }
     
     func checkForVictory(_ s :String) -> Bool
@@ -226,7 +220,7 @@ class ViewController: UIViewController
         resetBoard()
         noughtsScore = 0
         crossesScore = 0
-        coreDataController.storePlayerStates(playerScores: PlayerModel(player1Score: crossesScore, player2Score: noughtsScore))
+        coreDataController.storePlayerStates(playerScores: TikTokPlayer(player1Score: crossesScore, player2Score: noughtsScore))
         lblPlayer1Score.text = String(crossesScore)
         lblPlayer2Score.text = String(noughtsScore)
 

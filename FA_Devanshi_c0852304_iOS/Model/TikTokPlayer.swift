@@ -1,13 +1,7 @@
-//
-//  Player.swift
-//  FA_Namrata_C0853345_iOS
-//
-//  Created by Namrata Barot on 2022-05-30.
-//
 
 import Foundation
 
-class PlayerModel{
+class TikTokPlayer{
     let player1Score: Int
     let player2Score: Int
     

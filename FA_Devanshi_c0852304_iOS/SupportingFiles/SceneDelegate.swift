@@ -1,9 +1,3 @@
-//
-//  SceneDelegate.swift
-//  FA_Devanshi_c0852304_iOS
-//
-//  Created by Ishara Abeykoon on 2022-05-30.
-//
 
 import UIKit
 
