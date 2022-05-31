@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21D49" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BoardState" representedClassName="BoardState" syncable="YES" codeGenerationType="class">
+        <attribute name="squareStates" optional="YES" attributeType="Transformable"/>
+    </entity>
+    <entity name="PlayerState" representedClassName="PlayerState" syncable="YES" codeGenerationType="class">
+        <attribute name="firstPlayerScore" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="secondPlayerScore" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="BoardState" positionX="-54" positionY="-9" width="128" height="44"/>
+        <element name="PlayerState" positionX="-36" positionY="9" width="128" height="59"/>
+    </elements>
+</model>
